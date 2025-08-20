@@ -1,0 +1,121 @@
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Full page dark theme */
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #000814, #001d3d);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #e4e8f0;
+    }
+
+    /* Container to center content */
+    .page-container {
+      width: 100%;
+      max-width: 700px;
+      padding: 2rem;
+    }
+
+    /* Form wrapper */
+    .form-wrapper {
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid #1e2a44;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Title */
+    .page-title {
+      font-size: 2rem;
+      color: #4da3ff;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    /* Form styling */
+    .message-form .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .message-form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #9db7e0;
+    }
+
+    .message-form input,
+    .message-form textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid #2a3c5c;
+      border-radius: 8px;
+      background: #111827;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .message-form input:focus,
+    .message-form textarea:focus {
+      outline: none;
+      border-color: #4da3ff;
+      box-shadow: 0 0 6px #4da3ff66;
+    }
+
+    /* Submit button */
+    .btn-submit {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(90deg, #1e40af, #2563eb);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-submit:hover {
+      background: linear-gradient(90deg, #2563eb, #1e40af);
+      transform: translateY(-2px);
+    }
+
+    /* Locked page (when not logged in) */
+    .locked-wrapper {
+      text-align: center;
+      background: rgba(15, 23, 42, 0.95);
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid #1e2a44;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+    }
+
+    .locked {
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+      color: #f87171;
+    }
+
+    .btn-login {
+      display: inline-block;
+      padding: 0.8rem 1.6rem;
+      background: #4da3ff;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .btn-login:hover {
+      background: #2563eb;
+    }

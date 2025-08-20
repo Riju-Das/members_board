@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Message Board</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <%- include ("./partials/navbar.ejs" , {user:user}) %>
+
+
+<main class="message-board">
+  <% if (user) { %>
+    <h1 class="welcome"> Welcome, <%= user.fullname %>!</h1>
+    <div class="actions">
+      <a href="/message/new" class="btn add-btn">➕ Add Message</a>
+    </div>
+  <% } else { %>
+    <h1 class="welcome locked"> Log in to see the author of the messages</h1>
+  <% } %>
+
+  <h2 class="section-title">💬 Messages</h2>
+  <div class="messages-container">
+    <% if (messages && messages.length > 0) { %>
+      <% messages.forEach(msg => { %>
+        <div class="message-card">
+          <div class="message-header">
+            <span class="msg-title">
+              <% if (user) { %>
+                <%= msg.title %>
+              <% } else { %>
+                *******
+              <% } %>            
+            </span>
+            <span class="author">
+              <% if (user) { %>
+                <% const author = users.find(u => u.id === msg.user_id); %>
+                <%= author ? author.fullname : "Unknown Author" %>
+              <% } else { %>
+                ********
+              <% } %>
+            </span>
+
+          </div>
+          <div class="message-body">
+            <p><%= msg.message %></p>
+          </div>
+          <% if (user && user.id === msg.user_id) { %>
+            <div class="message-actions">
+              <form action="/message/<%= msg.id %>/edit" method="GET">
+                <button class="btn edit-btn">✏️ Edit</button>
+              </form>
+              <form action="/message/<%= msg.id %>/delete" method="POST">
+                <button class="btn edit-btn">Delete</button>
+              </form>
+            </div>
+          <% } %>
+        </div>
+      <% }) %>
+    <% } else { %>
+      <p class="empty-state"> No messages yet. Be the first to post!</p>
+    <% } %>
+  </div>
+</main>
+
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+<nav class="navbar">
+  <h1 class="logo">Message Board</h1>
+  <ul class="nav-links">
+    <% if (user) { %>
+      <li class="welcome">Welcome, <span><%= user.fullname %></span></li>
+      <li><a href="/logout" class="btn logout">Logout</a></li>
+    <% } else { %>
+      <li><a href="/login" class="btn login">Login</a></li>
+    <% } %>
+  </ul>
+</nav>
