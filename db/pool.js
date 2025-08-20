@@ -6,5 +6,8 @@ module.exports = new Pool({
   password: process.env.DB_PASS,
   host: process.env.DB_HOST,
   database: process.env.DB_NAME,
-  port:process.env.DB_PORT
+  port:process.env.DB_PORT,
+  ssl: {
+    rejectUnauthorized: false, // Render requires SSL, skip cert validation
+  },
 })
